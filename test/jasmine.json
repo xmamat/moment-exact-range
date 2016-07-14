@@ -1,7 +1,7 @@
 {
   "spec_dir": "tests",
   "spec_files": [
-    "moment-precise-range-test.js"
+    "moment-exact-range-test.js"
   ],
   "helpers": [
   ]
