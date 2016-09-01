@@ -41,7 +41,7 @@
             seconds: secDiff,
             milliseconds: msecDiff,
             
-            humanize: function(maxUnit) {
+            humanize: function() {
                 var result = [];
 
                 var originalRelative = {};
@@ -54,8 +54,8 @@
                 moment.relativeTimeThreshold('s', 60);
                 moment.relativeTimeThreshold('m', 60);
                 moment.relativeTimeThreshold('h', 24);
-                moment.relativeTimeThreshold('d', 28);
-                moment.relativeTimeThreshold('M', 12);
+                moment.relativeTimeThreshold('d', Number.MAX_VALUE);
+                moment.relativeTimeThreshold('M', Number.MAX_VALUE);
 
                 if (this.days) {
                     result.push(moment.duration(this.days, 'day').humanize());
@@ -66,7 +66,7 @@
                 if (this.minutes) {
                     result.push(moment.duration(this.minutes, 'minute').humanize());
                 }
-                //TODO replace moment.js behaviour that always displays 'a few seconds' with a the exact count
+                //TODO replace moment.js behaviour that always displays 'a few seconds' with the exact count
                 if (this.seconds) {
                     result.push(moment.duration(this.seconds, 'second').humanize());
                 }
