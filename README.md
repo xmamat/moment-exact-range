@@ -1,8 +1,16 @@
 # moment-exact-range
 
-This is a fork of https://github.com/codebox/moment-precise-range that is a plugin for the <a href="http://momentjs.com/">moment.js</a> JavaScript library to display date/time ranges precisely, in a human-readable format.
+This is a fork of https://github.com/codebox/moment-precise-range that is a plugin for the <a href="http://momentjs.com/">Moment</a> JavaScript library to display date/time ranges precisely, in a human-readable format.
 
-The difference here is that it calculates the exact difference in days/hours/minutes by taking into account the correct number of days in the ranged months and/or common or leap years. For that reason `exactDiff` result doesn't use the month and year units as these can vary in length.
+The difference here is that it calculates the exact difference in days/hours/minutes/seconds/milliseconds by taking into account the correct number of days in the ranged months and/or common or leap years. For that reason `exactDiff` result doesn't use the month and year units as these can vary in length.
+
+The humanized display currently supports days/hours/minutes by using the Moment localization.
+
+	moment.locale('en');
+	moment.exactDiff('2016-07-27 19:27', '2017-08-28 20:34').humanize(); // 397 days an hour 7 minutes
+
+	moment.locale('fr');
+	moment.exactDiff('2016-07-27 19:27', '2017-08-28 20:34').humanize(); // 397 jours une heure 7 minutes
 
 ## Usage
 
@@ -18,4 +26,4 @@ after the tag used to include the moment.js library:
 
 To use the plugin within a node.js application, add the following `require` statement into your code:
 
-    require('moment-exact-range-plugin');
+    require('moment-exact-range');

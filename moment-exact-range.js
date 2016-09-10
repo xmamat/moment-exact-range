@@ -1,3 +1,7 @@
+if (typeof moment === 'undefined' && require) {
+    moment = require('moment');
+}
+
 (function(moment) {
     moment.fn.exactDiff = function(d2) {
         return moment.exactDiff(this, d2);
@@ -65,10 +69,6 @@
                 }
                 if (this.minutes) {
                     result.push(moment.duration(this.minutes, 'minute').humanize());
-                }
-                //TODO replace moment.js behaviour that always displays 'a few seconds' with the exact count
-                if (this.seconds) {
-                    result.push(moment.duration(this.seconds, 'second').humanize());
                 }
 
                 moment.relativeTimeThreshold('s', originalRelative.s);

@@ -1,8 +1,0 @@
-{
-  "spec_dir": "tests",
-  "spec_files": [
-    "moment-exact-range-test.js"
-  ],
-  "helpers": [
-  ]
-}

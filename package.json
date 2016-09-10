@@ -1,27 +1,32 @@
 {
-  "name": "moment-exact-range-plugin",
+  "name": "moment-exact-range",
   "version": "1.0.0",
-  "description": "This is a plugin for the moment.js JavaScript library, to display date/time ranges exactly, in a human-readable format.",
-  "main": "moment-exact-range.js",
-  "files": [
-    "*.md",
-    "moment-exact-range.js"
-  ],
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "cd test && node node-tests.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xmamat/moment-exact-range.git"
-  },
-  "tonicExampleFilename" : "example/example.js",
+  "description": "This is a plugin for the Moment JavaScript library to display date/time ranges exactly in a human-readable format.",
   "author": "Mathieu GUILLEMAIN",
   "license": "MIT",
+  "homepage": "https://github.com/xmamat/moment-exact-range#readme",
   "bugs": {
     "url": "https://github.com/xmamat/moment-exact-range/issues"
   },
-  "homepage": "https://github.com/xmamat/moment-exact-range#readme"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xmamat/moment-exact-range.git"
+  },
+  "main": "./moment-exact-range.js",
+  "tonicExampleFilename": "./moment-exact-range-example.tonic.js",
+  "scripts": {
+    "example": "node ./moment-exact-range-example.js",
+    "test": "npm run test-node && npm run test-browser",
+    "test-node": "mocha -R spec ./test/index.js",
+    "test-browser": "mocha-phantomjs ./test/index.html"
+  },
+  "dependencies": {
+    "moment": "^2.14.1"
+  },
+  "devDependencies": {
+    "tonic-example": "^0.2.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "mocha-phantomjs": "4.1.0"
+  }
 }
